@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- This assignment was created by Tamara Howell. Intended audience is Charlie Kelly - a fictional character from the show 'It's Always Sunny in Philidelphia'. 
+	Episode transcript: http://transcripts.foreverdreaming.org/viewtopic.php?f=104&t=15526 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Kitten Mittens</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header>
+		<p>Kitten Mittens</p>
+		<!-- aria role -->
+		<nav role="navigation" aria-labelledby="primary-nav">
+			<ul>
+				<!-- tabindex -->
+				<li tabindex="1"><a href="">Home</a></li>
+				<li tabindex="2"><a href="">About</a></li>
+				<li tabindex="3"><a href="">Contact</a></li>
+				<!-- aria-disabled property -->
+				<li tabindex="4"><a href="" aria-disabled="true" id="shop">Shop - Coming Soon</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<!-- aria label -->
+		<section id="intro" role="region" aria-label="intro">
+			<h1 tabindex="5">Is your cat making too much noise all the time?</h1>
+			<img tabindex="6"alt="cat photo" src="contents/cat-photo.jpeg" >
+		</section>
+		<section id="article-content" role="region" aria-labelledby="main-page-info">
+			<!-- tab-style navigation -->
+			<nav class="tabs" role="navigation" aria-labelledby="tab-navigation">
+				<!-- aria-controls signals which elements are effected by these buttons -->
+				<button tabindex="7" class="tab" aria-controls="product">Product</button>
+				<button tabindex="8" class="tab" aria-controls="reviews">Reviews</button>
+				<button tabindex="9" class="tab" aria-controls="our-story">Our Story</button>
+				<!-- <button class="tab" aria-controls="shop" aria-disabled="true">Shop - Coming Soon</button> -->
+			</nav>
+			<!-- tabbed content -->
+			<article id="product" class="tabcontent visible" aria-hidden="false">
+				<h2>Finally there is an elegant, comfortable mitten - for cats!</h2>
+				<img src="contents/kitten.jpeg" id="product-image" alt="cat wearing kitten mittens" width="500">
+				<p>One size fits all!</p>
+				<h4>Available colours</h4>
+				<section>
+					<!-- labeling these visual elements so that users know what they are -->
+					<div aria-label="product-colour-swatch-blue"><p>Blue</p></div>
+					<div aria-label="product-colour-swatch-red"><p>Red</p></div>
+					<div aria-label="product-colour-swatch-grey"><p>Grey</p></div>
+					<div aria-label="product-colour-swatch-black"><p>Black</p></div>
+				</section>
+			</article>
+
+			<article id="reviews" class="tabcontent" aria-hidden="true">
+				<h2>Guaranteed Cat-isfaction!</h2>
+				<div class="review">
+					<h4>My cats love these</h4>
+					<!-- labeling these visual elements so that users know what they are -->
+					<div class="star-rating" aria-label="star-rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+					</div>
+					<p>My cats are always glad to wear their mittens!</p>
+				</div>
+				<div class="review">
+					<h4>Captain Snuggleblossom approves!</h4>
+					<div class="star-rating" aria-label="star-rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+					</div>
+					<p>My cats are way quieter now - thanks Kitten Mittens!</p>
+				</div>
+				<div class="review">
+					<h4>Best cat mittens ever</h4>
+					<div class="star-rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+					</div>
+					<p>Great quality</p>
+				</div>
+			</article>
+
+			<article id="our-story" class="tabcontent" aria-hidden="true">
+				<h2>Our Story</h2>
+				<p>How kitten mittens came to be...</p>
+				<!-- <video width="320" height="240" controls>
+					<source src="movie.mp4" type="video/mp4">
+					<source src="movie.ogg" type="video/ogg">
+					Your browser does not support the video tag.
+				</video> -->
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/22O6Nmjt-mw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</article>
+			
+		</section>
+		<section role="region" aria-label="contact-form" id="contact">
+			<h2>Contact us about your Kitten Mitten questions or comments!</h2>
+			<form aria-label="contact">
+				<fieldset>
+					<legend>Enter your information below</legend>
+					<label for="name">Name</label>
+					<input type="text" name="name" aria-describedby="name-tip" aria-required="true">
+					<div role="tooltip" id="name-tip">Please enter your first and last name or initial.</div>
+					<label for="email">Email Address</label>
+					<input type="text" name="email" aria-describedby="email-tip" aria-required="true">
+					<div role="tooltip" id="email-tip">Your email address (example: someone@mailservice.com)</div>
+					<label for="questions-comments">Questions or Comments</label>
+					<input type="text" name="questions-comments"  placeholder="your questions or comments here" aria-describedby="question-tip" aria-required="true">
+					<div role="tooltip" id="question-tip">Enter your message - please be as specific as possible.</div>
+					<input type="submit" value="submit">
+				</fieldset>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<small>&copy; KittenMittens 2018</small>
+		<!-- scripts -->
+		<script src="scripts/app.js"></script>
+	</footer>
+</body>
+</html>
